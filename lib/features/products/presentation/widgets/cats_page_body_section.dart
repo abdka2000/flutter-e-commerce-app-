@@ -4,16 +4,16 @@ import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/widgets/loading.dart';
 import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/products/presentation/bloc/get_by_cat/get_by_cat_cubit.dart';
-import 'package:e_commerce/features/products/presentation/widgets/cats_page_head.dart';
+import 'package:e_commerce/features/products/presentation/widgets/cats_page_head_section.dart';
 import 'package:e_commerce/features/products/presentation/widgets/cats_page_item.dart';
 import 'package:e_commerce/features/products/presentation/widgets/cats_page_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CatsPageBody extends StatelessWidget {
+class CatsPageBodySection extends StatelessWidget {
   final String catTitle;
 
-  const CatsPageBody({super.key, required this.catTitle});
+  const CatsPageBodySection({super.key, required this.catTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class CatsPageBody extends StatelessWidget {
     final String catImage = catsImages[catTitle].toString();
     return ListView(
       children: [
-        CatsPageHead(image: catImage, title: catTitle),
+        CatsPageHeadSection(image: catImage, title: catTitle),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
           child: Text(

@@ -4,10 +4,10 @@ import 'package:e_commerce/core/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class CatsPageHead extends StatelessWidget {
+class CatsPageHeadSection extends StatelessWidget {
   final String image;
   final String title;
-  const CatsPageHead({
+  const CatsPageHeadSection({
     super.key,
     required this.image,
     required this.title,

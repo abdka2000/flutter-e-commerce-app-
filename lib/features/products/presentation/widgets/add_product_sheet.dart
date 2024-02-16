@@ -6,7 +6,7 @@ import 'package:e_commerce/features/products/domain/entities/product_entity.dart
 import 'package:e_commerce/features/products/presentation/bloc/add_product/add_product_cubit.dart';
 import 'package:e_commerce/features/products/presentation/bloc/add_update_delete/add_update_deleta_cubit.dart';
 import 'package:e_commerce/features/products/presentation/widgets/add_product_field.dart';
-import 'package:e_commerce/features/products/presentation/widgets/bottom_sheet_body.dart';
+import 'package:e_commerce/features/products/presentation/widgets/bottom_sheet_form.dart';
 import 'package:e_commerce/injection_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -20,12 +20,11 @@ class AddProductSheet extends StatelessWidget {
     return BlocProvider(
       create: (context) => sl<AddProductCubit>(),
       child: BlocConsumer<AddProductCubit, AddProductState>(
-        builder: (context, state) => const BottomSheetBody(),
+        builder: (context, state) => const BottomSheetForm(),
         listener: (context, state) {
           if (state is AddProductError) {
             GoRouter.of(context).pop();
             Messagees.errorMessage(context, state.message);
-            
           }
           if (state is AddProductDone) {
             GoRouter.of(context).pop();
