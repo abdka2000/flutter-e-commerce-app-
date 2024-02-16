@@ -1,6 +1,5 @@
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/widgets/loading.dart';
-import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/products/presentation/bloc/categories/categories_cubit.dart';
 import 'package:e_commerce/features/products/presentation/bloc/products/products_cubit.dart';
 import 'package:e_commerce/features/products/presentation/widgets/add_button.dart';
