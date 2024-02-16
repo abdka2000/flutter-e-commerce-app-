@@ -49,7 +49,7 @@ class ProductsRemoteDataSourceImpl implements ProductsRemoteDataSource {
     final body = {
       
       "title": productModel.title,
-      "price": productModel.price,
+      "price": productModel.price.toString(),
       "description": productModel.description,
       "image": productModel.image,
       "category": productModel.category,
