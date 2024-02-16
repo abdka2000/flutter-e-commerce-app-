@@ -1,6 +1,5 @@
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/string/navigation.dart';
-import 'package:e_commerce/core/widgets/button_widget.dart';
 import 'package:e_commerce/features/auth/presentation/bloc/splash_cubit/splash_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

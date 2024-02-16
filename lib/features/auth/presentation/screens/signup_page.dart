@@ -3,7 +3,6 @@ import 'package:e_commerce/core/string/navigation.dart';
 import 'package:e_commerce/core/widgets/snackbar_message.dart';
 import 'package:e_commerce/features/auth/presentation/bloc/auth_cubit/auth_cubit.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/signup_form.dart';
-import 'package:e_commerce/features/products/presentation/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -11,10 +10,6 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/widgets/button_widget.dart';
 import '../../../../core/widgets/loading.dart';
 import '../widgets/cosy_image.dart';
-import '../widgets/high_text.dart';
-import '../widgets/small_text.dart';
-import '../widgets/spacing.dart';
-import 'login_page.dart';
 
 TextEditingController _usernameController = TextEditingController();
 TextEditingController _emailController = TextEditingController();
@@ -47,11 +42,17 @@ class SignupPage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Column(
       children: [
-        const Spacing(),
+        const SizedBox(
+          height: 20,
+        ),
         const COSYImage(),
-        const HighText(text: "Sign up!"),
-        const Spacing(),
-        const SmallText(text: "Sign up to show our special products"),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          "Sign up to show our special products",
+          style: TextStyle(color: Colors.white, letterSpacing: 1),
+        ),
         const Spacer(
           flex: 1,
         ),
@@ -72,8 +73,9 @@ class SignupPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SmallText(
-              text: "Already have an account? ",
+            const Text(
+              "Already have an account ? ",
+              style: TextStyle(color: Colors.white, letterSpacing: 1),
             ),
             InkWell(
               onTap: () {
@@ -90,9 +92,9 @@ class SignupPage extends StatelessWidget {
             )
           ],
         ),
-        const Spacing(),
-        const Spacing(),
-        const Spacing(),
+        const SizedBox(
+          height: 60,
+        ),
       ],
     );
   }

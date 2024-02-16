@@ -1,4 +1,3 @@
-import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class HiveBox {

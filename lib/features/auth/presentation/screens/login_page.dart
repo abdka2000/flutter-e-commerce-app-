@@ -4,13 +4,8 @@ import 'package:e_commerce/core/widgets/button_widget.dart';
 import 'package:e_commerce/core/widgets/loading.dart';
 import 'package:e_commerce/core/widgets/snackbar_message.dart';
 import 'package:e_commerce/features/auth/presentation/bloc/auth_cubit/auth_cubit.dart';
-import 'package:e_commerce/features/auth/presentation/screens/signup_page.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/cosy_image.dart';
-import 'package:e_commerce/features/auth/presentation/widgets/high_text.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/login_form.dart';
-import 'package:e_commerce/features/auth/presentation/widgets/small_text.dart';
-import 'package:e_commerce/features/auth/presentation/widgets/spacing.dart';
-import 'package:e_commerce/features/products/presentation/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -46,11 +41,26 @@ class LoginPage extends StatelessWidget {
   Widget _buildBody(BuildContext context) {
     return Column(
       children: [
-        const Spacing(),
+        const SizedBox(
+          height: 20,
+        ),
         const COSYImage(),
-        const HighText(text: "Log in!"),
-        const Spacing(),
-        const SmallText(text: "Sign in to show our special products"),
+        const Text(
+          "Log in!",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              height: 0.9,
+              color: Colors.white,
+              fontSize: 35,
+              fontWeight: FontWeight.w100),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        const Text(
+          "Sign in to show our special products",
+          style: TextStyle(color: Colors.white, letterSpacing: 1),
+        ),
         const Spacer(
           flex: 1,
         ),
@@ -70,8 +80,9 @@ class LoginPage extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SmallText(
-              text: "Don't have an account yet ? ",
+            const Text(
+              "Don't have an account yet ? ",
+              style: TextStyle(color: Colors.white, letterSpacing: 1),
             ),
             InkWell(
               onTap: () {
@@ -88,9 +99,9 @@ class LoginPage extends StatelessWidget {
             )
           ],
         ),
-        const Spacing(),
-        const Spacing(),
-        const Spacing()
+        const SizedBox(
+          height: 60,
+        ),
       ],
     );
   }

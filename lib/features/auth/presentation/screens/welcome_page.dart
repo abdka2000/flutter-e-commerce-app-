@@ -1,15 +1,10 @@
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/string/navigation.dart';
-import 'package:e_commerce/features/auth/presentation/screens/login_page.dart';
-import 'package:e_commerce/features/auth/presentation/screens/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/widgets/button_widget.dart';
 import '../widgets/cosy_image.dart';
-import '../widgets/high_text.dart';
-import '../widgets/small_text.dart';
-import '../widgets/spacing.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -30,22 +25,34 @@ class WelcomePage extends StatelessWidget {
               ),
             ),
             const COSYImage(),
-            const HighText(
-              text: "Add some coziness\n to your home",
+
+            const Text(
+              "Add some coziness\n to your home",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  height: 0.9,
+                  color: Colors.white,
+                  fontSize: 35,
+                  fontWeight: FontWeight.w100),
             ),
-            const Spacing(),
+            const SizedBox(
+              height: 20,
+            ),
             ButtonWidget(
               text: "Sign in",
               fun: () {
                 GoRouter.of(context).pushReplacement(LOGIN_PAGE);
               },
             ),
-            const Spacing(),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SmallText(
-                  text: "Don't have an account yet ? ",
+                const Text(
+                  "Don't have an account yet ?",
+                  style: TextStyle(color: Colors.white, letterSpacing: 1),
                 ),
                 InkWell(
                   onTap: () {
