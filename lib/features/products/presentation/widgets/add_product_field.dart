@@ -1,21 +1,25 @@
 
 import 'package:flutter/material.dart';
+
 import '../../../../core/string/colors.dart';
 
 class AddProductField extends StatelessWidget {
   final String hint;
+  final TextInputType? type;
   final TextEditingController controller;
   const AddProductField({
-    super.key,
+    Key? key,
     required this.hint,
+    this.type,
     required this.controller,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10),
       child: TextFormField(
+        keyboardType: type ,
         controller: controller,
         cursorColor: AppColors.orange,
         style: const TextStyle(color: Colors.white),

@@ -64,6 +64,7 @@ class BottomSheetBody extends StatelessWidget {
               AddProductField(
                 hint: "product price",
                 controller: priceController,
+                type: TextInputType.number,
               ),
               ButtonWidget(text: "Add New Product", fun: _checkAddProduct),
             ],
