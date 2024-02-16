@@ -21,13 +21,13 @@ import '../../features/auth/presentation/bloc/auth_cubit/auth_cubit.dart';
 
 abstract class AppRouter {
   static final router = GoRouter(routes: [
-    // GoRoute(
-    //   path: "/",
-    //   builder: (context, state) => BlocProvider(
-    //     create: (context) => sl<SplashCubit>(),
-    //     child: const SplashScreen(),
-    //   ),
-    // ),
+    GoRoute(
+      path: "/",
+      builder: (context, state) => BlocProvider(
+        create: (context) => sl<SplashCubit>(),
+        child: const SplashScreen(),
+      ),
+    ),
     GoRoute(
       path: HOME_PAGE,
       builder: (context, state) => MultiBlocProvider(providers: [
@@ -72,6 +72,5 @@ abstract class AppRouter {
         child:  CatsPage(title: state.extra as String,),
       ),
     ),
-    GoRoute(path: "/" , builder: (context , state)=> const Test())
   ]);
 }

@@ -6,6 +6,7 @@ import 'package:e_commerce/features/products/domain/entities/product_entity.dart
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'injection_container.dart' as di;
+
 import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
