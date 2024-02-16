@@ -1,9 +1,6 @@
-import 'package:e_commerce/core/string/colors.dart';
-import 'package:e_commerce/core/string/navigation.dart';
+import 'package:e_commerce/features/auth/presentation/widgets/welcome_page_register_section.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../../core/widgets/button_widget.dart';
 import '../widgets/cosy_image.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -25,7 +22,6 @@ class WelcomePage extends StatelessWidget {
               ),
             ),
             const COSYImage(),
-
             const Text(
               "Add some coziness\n to your home",
               textAlign: TextAlign.center,
@@ -38,37 +34,7 @@ class WelcomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            ButtonWidget(
-              text: "Sign in",
-              fun: () {
-                GoRouter.of(context).pushReplacement(LOGIN_PAGE);
-              },
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Don't have an account yet ?",
-                  style: TextStyle(color: Colors.white, letterSpacing: 1),
-                ),
-                InkWell(
-                  onTap: () {
-                    GoRouter.of(context).pushReplacement(SIGNUP_PAGE);
-                  },
-                  child: Text(
-                    "Sign up",
-                    style: TextStyle(
-                        color: AppColors.orange,
-                        letterSpacing: 1,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
+            const WelcomePageRegisterSection(),
           ],
         ),
       ]),
