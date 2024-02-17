@@ -1,6 +1,6 @@
 import 'package:e_commerce/core/network/network_info.dart';
-import 'package:e_commerce/features/auth/data/dataSources/local_dataSource.dart';
-import 'package:e_commerce/features/auth/data/dataSources/remote_dataSource.dart';
+import 'package:e_commerce/features/auth/data/dataSources/auth_local_dataSource.dart';
+import 'package:e_commerce/features/auth/data/dataSources/auth_remote_dataSource.dart';
 import 'package:e_commerce/features/auth/data/repository/auth_repository_impl.dart';
 import 'package:e_commerce/features/auth/domain/usecases/log_in_usecase.dart';
 import 'package:e_commerce/features/auth/domain/usecases/sign_up_usecase.dart';

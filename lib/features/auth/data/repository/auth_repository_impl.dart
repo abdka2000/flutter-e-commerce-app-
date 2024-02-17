@@ -2,8 +2,8 @@ import 'package:dartz/dartz.dart';
 import 'package:e_commerce/core/errors/exception.dart';
 import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/core/network/network_info.dart';
-import 'package:e_commerce/features/auth/data/dataSources/local_dataSource.dart';
-import 'package:e_commerce/features/auth/data/dataSources/remote_dataSource.dart';
+import 'package:e_commerce/features/auth/data/dataSources/auth_local_dataSource.dart';
+import 'package:e_commerce/features/auth/data/dataSources/auth_remote_dataSource.dart';
 import 'package:e_commerce/features/auth/domain/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
