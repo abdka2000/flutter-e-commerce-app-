@@ -30,7 +30,6 @@ class SignupFormSection extends StatelessWidget {
             validateLogin(context);
           },
         ),
-        
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -53,9 +52,7 @@ class SignupFormSection extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(
-          height: 60,
-        ),
+        const SizedBox(height: 60),
       ],
     );
   }

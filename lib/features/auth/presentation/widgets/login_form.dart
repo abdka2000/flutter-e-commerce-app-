@@ -2,11 +2,8 @@ import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
-
-
 class LoginForm extends StatelessWidget {
   final TextEditingController usernameController;
-
   final TextEditingController passwordController;
   final GlobalKey<FormState> loginKey;
 
