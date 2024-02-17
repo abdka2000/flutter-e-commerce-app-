@@ -7,7 +7,6 @@ import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
-
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -22,23 +21,26 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<SplashCubit, SplashState>(
-        listener: (context, state) {
-          if (state is NoRegesterState) {
-            GoRouter.of(context).pushReplacement(WELCOME_PAGE);
-          } else if (state is RegesterState) {
-            GoRouter.of(context).pushReplacement(HOME_PAGE);
-          }
-        },
-        child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: AppColors.darkGrey,
-            child: Center(
-                child: Image.asset(
-              "assets/images/logo.png",
-              width: 120,
-              height: 120,
-            ))));
+      listener: (context, state) {
+        if (state is NoRegesterState) {
+          GoRouter.of(context).pushReplacement(WELCOME_PAGE);
+        } else if (state is RegesterState) {
+          GoRouter.of(context).pushReplacement(HOME_PAGE);
+        }
+      },
+      child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: AppColors.darkGrey,
+        child: Center(
+          child: Image.asset(
+            "assets/images/logo.png",
+            width: 120,
+            height: 120,
+          ),
+        ),
+      ),
+    );
   }
 
   navigate() {

@@ -19,6 +19,7 @@ class LoginPage extends StatelessWidget {
           if (state is AuthErrorState) {
             Messagees.errorMessage(context, state.message);
           } else if (state is RegesterDoneState) {
+            Messagees.succesMessage(context, "Welcome again");
             GoRouter.of(context).pushReplacement(HOME_PAGE);
           }
         },

@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/features/auth/presentation/widgets/cosy_image.dart';
 import 'package:e_commerce/features/auth/presentation/widgets/welcome_page_register_section.dart';
 import 'package:flutter/material.dart';
@@ -32,9 +31,7 @@ class WelcomePageBody extends StatelessWidget {
                 fontSize: 35,
                 fontWeight: FontWeight.w100),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          const SizedBox(height: 20),
           const WelcomePageRegisterSection(),
         ],
       ),

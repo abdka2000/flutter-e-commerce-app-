@@ -7,21 +7,27 @@ class SignupPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
         Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             const COSYImage(),
-            const SizedBox(
-              height: 20,
+            const Text(
+              "Sign up!",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  height: 0.9,
+                  color: Colors.white,
+                  fontSize: 35,
+                  fontWeight: FontWeight.w100),
             ),
+            const SizedBox(height: 20),
             const Text(
               "Sign up to show our special products",
               style: TextStyle(color: Colors.white, letterSpacing: 1),
             ),
+            const SizedBox(height: 60),
             SignupFormSection()
           ],
         )

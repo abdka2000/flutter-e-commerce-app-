@@ -7,11 +7,9 @@ class LoginPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       children: [
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20),
         const COSYImage(),
         const Text(
           "Log in!",
@@ -22,20 +20,14 @@ class LoginPageBody extends StatelessWidget {
               fontSize: 35,
               fontWeight: FontWeight.w100),
         ),
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20),
         const Text(
           "Sign in to show our special products",
           style: TextStyle(color: Colors.white, letterSpacing: 1),
         ),
-        
-        const SizedBox(
-          height: 60,
-        ),
+        const SizedBox(height: 60),
         LoginFormSection()
       ],
     );
-  
   }
 }

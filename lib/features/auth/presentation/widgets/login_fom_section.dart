@@ -1,4 +1,3 @@
-
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/string/navigation.dart';
 import 'package:e_commerce/core/widgets/button_widget.dart';

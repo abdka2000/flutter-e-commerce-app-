@@ -17,9 +17,7 @@ class WelcomePageRegisterSection extends StatelessWidget {
             GoRouter.of(context).pushReplacement(LOGIN_PAGE);
           },
         ),
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
