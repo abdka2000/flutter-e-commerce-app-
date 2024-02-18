@@ -4,9 +4,10 @@ import 'package:go_router/go_router.dart';
 
 class SearchField extends StatelessWidget {
   final Function(String) changeState;
+  final TextEditingController controller;
   const SearchField({
     super.key,
-    required this.changeState,
+    required this.changeState, required this.controller,
   });
 
   @override
