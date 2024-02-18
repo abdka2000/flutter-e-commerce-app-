@@ -1,11 +1,13 @@
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/widgets/button_widget.dart';
+import 'package:e_commerce/core/widgets/snackbar_message.dart';
 import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/products/presentation/widgets/rating_reviews.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class DetailsContainer extends StatelessWidget {
-  const DetailsContainer({
+class ProductDetailsSection extends StatelessWidget {
+  const ProductDetailsSection({
     super.key,
     required this.product,
   });
@@ -32,7 +34,9 @@ class DetailsContainer extends StatelessWidget {
           ),
           Text(product.description,
               style: const TextStyle(color: Colors.white, letterSpacing: 1)),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Divider(thickness: 1, height: 5, color: AppColors.lightGrey),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -46,7 +50,13 @@ class DetailsContainer extends StatelessWidget {
               ),
               Container(
                   width: MediaQuery.of(context).size.width * .61,
-                  child: ButtonWidget(text: "Add to cart", fun: () {}))
+                  child: ButtonWidget(
+                      text: "Add to cart",
+                      fun: () {
+                        GoRouter.of(context).pop();
+                        Messagees.errorMessage(
+                            context, "Can't add try again later");
+                      }))
             ],
           )
         ],
