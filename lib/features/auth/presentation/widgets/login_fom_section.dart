@@ -7,17 +7,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginFormSection extends StatelessWidget {
-   LoginFormSection({super.key});
-  // ignore: no_leading_underscores_for_local_identifiers
-final _loginKey = GlobalKey<FormState>();
-final _userNameController = TextEditingController();
-final _passwordController = TextEditingController();
+class LoginFormSection extends StatefulWidget {
+  const LoginFormSection({super.key});
+
+  @override
+  State<LoginFormSection> createState() => _LoginFormSectionState();
+}
+
+class _LoginFormSectionState extends State<LoginFormSection> {
+  final _loginKey = GlobalKey<FormState>();
+
+  final _userNameController = TextEditingController();
+
+  final _passwordController = TextEditingController();
+  var autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      LoginForm(
+    return Column(
+      children: [
+        LoginForm(
+            autovalidateMode: autovalidateMode,
             usernameController: _userNameController,
             passwordController: _passwordController,
             loginKey: _loginKey),
@@ -49,17 +59,22 @@ final _passwordController = TextEditingController();
             )
           ],
         ),
-    ],);
-
-    
+      ],
+    );
   }
+
   void validateLogin(BuildContext context) {
     final isValid = _loginKey.currentState!.validate();
     if (isValid) {
       BlocProvider.of<AuthCubit>(context)
           .login(_userNameController.text, _passwordController.text);
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
     }
   }
+
   void _clearField() {
     _passwordController.clear();
     _userNameController.clear();

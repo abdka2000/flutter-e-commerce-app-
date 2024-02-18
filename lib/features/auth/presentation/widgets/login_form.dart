@@ -6,12 +6,14 @@ class LoginForm extends StatelessWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
   final GlobalKey<FormState> loginKey;
+  final AutovalidateMode autovalidateMode;
 
   const LoginForm({
     Key? key,
     required this.usernameController,
     required this.passwordController,
     required this.loginKey,
+    required this.autovalidateMode,
   }) : super(key: key);
 
   @override
@@ -26,6 +28,7 @@ class LoginForm extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         width: double.infinity,
         child: Form(
+          autovalidateMode: autovalidateMode,
           key: loginKey,
           child: Column(
             children: [

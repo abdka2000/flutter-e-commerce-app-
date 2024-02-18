@@ -7,19 +7,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-class SignupFormSection extends StatelessWidget {
-  SignupFormSection({super.key});
+class SignupFormSection extends StatefulWidget {
+  const SignupFormSection({super.key});
 
+  @override
+  State<SignupFormSection> createState() => _SignupFormSectionState();
+}
+
+class _SignupFormSectionState extends State<SignupFormSection> {
   final _usernameController = TextEditingController();
+
   final _emailController = TextEditingController();
+
   final _passwordController = TextEditingController();
+
   final _signupKey = GlobalKey<FormState>();
+  var autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         SignupForm(
+            autovalidateMode: autovalidateMode,
             usernameController: _usernameController,
             emailController: _emailController,
             passwordController: _passwordController,
@@ -62,6 +72,10 @@ class SignupFormSection extends StatelessWidget {
     if (isValid) {
       BlocProvider.of<AuthCubit>(context).signup(_usernameController.text,
           _emailController.text, _passwordController.text);
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
     }
   }
 
