@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        floatingActionButton: AddButton(), body: HomePageBody());
+        floatingActionButton: AddButton(),
+        body: SafeArea(child: HomePageBody()));
   }
 }
