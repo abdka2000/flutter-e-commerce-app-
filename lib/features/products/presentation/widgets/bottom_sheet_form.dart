@@ -1,14 +1,10 @@
 import 'package:e_commerce/core/string/colors.dart';
 import 'package:e_commerce/core/widgets/button_widget.dart';
-import 'package:e_commerce/core/widgets/loading.dart';
-import 'package:e_commerce/core/widgets/snackbar_message.dart';
 import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/products/presentation/bloc/add_product/add_product_cubit.dart';
-import 'package:e_commerce/features/products/presentation/bloc/add_update_delete/add_update_deleta_cubit.dart';
 import 'package:e_commerce/features/products/presentation/widgets/add_product_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class BottomSheetForm extends StatelessWidget {
   const BottomSheetForm({super.key});
@@ -36,19 +32,25 @@ class BottomSheetForm extends StatelessWidget {
     }
 
     return Container(
-      color: AppColors.darkGrey,
-      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          color: AppColors.darkGrey,
+          borderRadius: const BorderRadius.vertical(top: Radius.circular(24))),
+      height: 600,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Form(
         key: formKey,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Add New Product",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 25,
-                  )),
+              const Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Text("Add New Product",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    )),
+              ),
               AddProductField(
                 hint: "product title",
                 controller: titleController,

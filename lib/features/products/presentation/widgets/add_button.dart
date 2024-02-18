@@ -12,7 +12,10 @@ class AddButton extends StatelessWidget {
     return FloatingActionButton(
       onPressed: () {
         showModalBottomSheet(
-            context: context, builder: (context) => const AddProductSheet());
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(24))),
+            context: context,
+            builder: (context) => const AddProductSheet());
       },
       backgroundColor: AppColors.orange,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),

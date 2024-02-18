@@ -1,11 +1,5 @@
-import 'package:e_commerce/core/string/colors.dart';
-import 'package:e_commerce/core/widgets/button_widget.dart';
-import 'package:e_commerce/core/widgets/loading.dart';
 import 'package:e_commerce/core/widgets/snackbar_message.dart';
-import 'package:e_commerce/features/products/domain/entities/product_entity.dart';
 import 'package:e_commerce/features/products/presentation/bloc/add_product/add_product_cubit.dart';
-import 'package:e_commerce/features/products/presentation/bloc/add_update_delete/add_update_deleta_cubit.dart';
-import 'package:e_commerce/features/products/presentation/widgets/add_product_field.dart';
 import 'package:e_commerce/features/products/presentation/widgets/bottom_sheet_form.dart';
 import 'package:e_commerce/injection_container.dart';
 import 'package:flutter/material.dart';
